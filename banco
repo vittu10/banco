@@ -1,0 +1,53 @@
+package Banco;
+
+import java.util.Locale;
+import java.util.Scanner;
+import conta.Conta;
+public class Banco {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc =  new Scanner(System.in);
+			Conta conta;
+		System.out.println("digite o numero da conta");
+		int numero_conta= sc.nextInt();
+		System.out.println("digite seu nome completo");
+		sc.nextLine();
+		String name=sc.nextLine();
+		System.out.println("tem deposito inicial? y or n");
+		char response = sc.next().charAt(0)	;
+		
+		if(response == 'y') {
+			System.out.println("insira o valor inicial");
+			double saldoI=sc.nextDouble();
+			
+			conta = new Conta(numero_conta, name, saldoI);
+
+		}else {
+			conta = new Conta(numero_conta, name);
+			
+		}
+		System.out.println();
+		System.out.println("sua conta:");
+		System.out.println(conta);
+		
+		System.out.println();
+		System.out.println("valor do deposito: ");
+		double deposito = sc.nextDouble();
+		conta.deposito(deposito);
+		System.out.println("seu novo saldo é: ");
+		System.out.println(conta);
+		System.out.println();
+		System.out.println("valor do saque: ");
+		double saque= sc.nextDouble();
+		conta.saque(saque);
+		System.out.println("seu novo saldo é: ");
+		System.out.println(conta);
+				
+		
+		
+;		
+ 
+	}
+
+}
