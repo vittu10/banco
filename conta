@@ -1,0 +1,49 @@
+package conta;
+
+public class Conta {
+  private int numero_conta;
+  public String name;
+  public double saldoI ;
+  protected  double deposito;
+public Conta(int numero_conta, String name) {
+	
+	this.numero_conta = numero_conta;
+	this.name = name;
+}
+public Conta(int numero_conta, String name, double saldoI) {
+	
+	this.numero_conta = numero_conta;
+	this.name = name;
+	deposito(saldoI);
+}
+public int getNumero_conta() {
+	return numero_conta;
+}
+
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public double getSaldo() {
+	return saldoI;
+}
+public void  deposito( double amount) {
+	   saldoI += amount;
+}
+public void saque(double amount) {
+	saldoI	 -= amount +5 ;
+}
+  public String toString() {
+	  return "numero da conta: " 
+			  + numero_conta 
+			  + ", seu nome: "
+			  + name
+			  +", saldo inicial : $ "
+			  + String.format("%.2f", saldoI);
+  }
+  
+  
+
+}
